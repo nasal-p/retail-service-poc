@@ -1,6 +1,6 @@
 #  MobileCare & Retail Management System
 
-[![CI Pipeline](https://github.com/USERNAME/REPO_NAME/actions/workflows/ci.yml/badge.svg)](https://github.com/USERNAME/REPO_NAME/actions)
+[![CI Pipeline](https://github.com/nasal-p/retail-service-poc/actions/workflows/ci.yml/badge.svg)](https://github.com/nasal-p/retail-service-poc/actions)
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)
 ![Django](https://img.shields.io/badge/Django-4.2+-092E20?style=flat&logo=django&logoColor=white)
 ![Django REST Framework](https://img.shields.io/badge/DRF-3.15+-red?style=flat)
