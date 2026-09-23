@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python Virtual Environments
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+backend/venv/
+backend/env/
+
+# Environment Variables & Secrets (CRITICAL: Never commit secrets)
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# SQLite Database (Do not commit local SQLite database)
+*.sqlite3
+backend/db.sqlite3
+
+# Node & Frontend dependencies & build outputs
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.cache/
+dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
