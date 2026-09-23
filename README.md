@@ -13,6 +13,14 @@
 
 ---
 
+### 🌐 Live Production Links
+
+* **Live Storefront (React SPA)**: [https://retail-service-poc.vercel.app](https://retail-service-poc.vercel.app)
+* **Live API Backend (Django DRF)**: [https://mobilecare-api.onrender.com](https://mobilecare-api.onrender.com)
+* **Interactive Swagger UI**: [https://mobilecare-api.onrender.com/api/docs/](https://mobilecare-api.onrender.com/api/docs/)
+
+---
+
 ##  Key Engineering Highlights
 
 * **Atomic Transactions & Concurrency Control**: Checkout logic utilizes database-level row locking (`select_for_update`) and `@transaction.atomic` to prevent race conditions and overselling during peak traffic.
