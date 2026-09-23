@@ -24,3 +24,6 @@ psycopg2-binary==2.9.9  # PostgreSQL adapter
 # Production WSGI Server & Static Files
 gunicorn==22.0.0
 whitenoise==6.7.0
+
+# Image handling
+Pillow==10.4.0
