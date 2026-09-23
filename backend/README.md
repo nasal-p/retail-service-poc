@@ -6,7 +6,7 @@ Designed with an API-first approach to serve web (React) and mobile frontends.
 
 ---
 
-##  Key Features
+## Key Features
 
 * **Role-Based Access Control (RBAC)**: Custom `CustomUser` model supporting `CUSTOMER`, `STAFF`, and `ADMIN` roles.
 * **Authentication**: JWT token authentication (access & refresh tokens) powered by `djangorestframework-simplejwt`.
@@ -19,7 +19,7 @@ Designed with an API-first approach to serve web (React) and mobile frontends.
 
 ---
 
-##  Technology Stack
+## Technology Stack
 
 * **Language**: Python 3.11+
 * **Framework**: Django 4.2+, Django REST Framework 3.15+
@@ -30,7 +30,7 @@ Designed with an API-first approach to serve web (React) and mobile frontends.
 
 ---
 
-##  Architecture & App Structure
+## Architecture & App Structure
 
 ```text
 backend/
@@ -58,7 +58,7 @@ backend/
 
 ---
 
-##  Quickstart & Setup Guide
+## Quickstart & Setup Guide
 
 ### 1. Environment Setup
 
@@ -122,7 +122,7 @@ The API server will run at `http://127.0.0.1:8000/`.
 
 ---
 
-##  API Documentation & Swagger UI
+## API Documentation & Swagger UI
 
 Once the server is running, open your browser and navigate to:
 
@@ -131,7 +131,7 @@ Once the server is running, open your browser and navigate to:
 
 ---
 
-##  Running Unit & Integration Tests
+## Running Unit & Integration Tests
 
 Run the complete automated test suite (31 tests covering all apps):
 
@@ -141,7 +141,7 @@ python manage.py test
 
 ---
 
-##  API Endpoint Summary
+## API Endpoint Summary
 
 ### Authentication (`/api/auth/`)
 * `POST /api/auth/register/` — Register new customer account

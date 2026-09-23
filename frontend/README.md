@@ -4,7 +4,7 @@ A modern, responsive React + Vite frontend for a **Retail Mobile Shop & Service 
 
 ---
 
-## 🌟 Features
+## Features
 
 * **Role-Based Access Control (RBAC)**: Role routing for `CUSTOMER`, `STAFF`, and `ADMIN`.
 * **JWT Authentication**: Auto token injection & seamless token refresh on 401 expiration.
@@ -15,7 +15,7 @@ A modern, responsive React + Vite frontend for a **Retail Mobile Shop & Service 
 
 ---
 
-## 🚀 Quickstart & Setup
+## Quickstart & Setup
 
 ### 1. Requirements
 
@@ -46,7 +46,7 @@ The application will run at `http://localhost:5173`.
 
 ---
 
-## 🔑 Demo Login Accounts
+## Demo Login Accounts
 
 | Role | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
@@ -56,7 +56,7 @@ The application will run at `http://localhost:5173`.
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```text
 frontend/

@@ -1,4 +1,4 @@
-#  MobileCare & Retail Management System
+# MobileCare & Retail Management System
 
 [![CI Pipeline](https://github.com/nasal-p/retail-service-poc/actions/workflows/ci.yml/badge.svg)](https://github.com/nasal-p/retail-service-poc/actions)
 ![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=flat&logo=python&logoColor=white)
@@ -13,7 +13,7 @@
 
 ---
 
-### 🌐 Live Production Links
+### Live Production Links
 
 * **Live Storefront (React SPA)**: [https://retail-service-poc.vercel.app](https://retail-service-poc.vercel.app)
 * **Live API Backend (Django DRF)**: [https://mobilecare-api.onrender.com](https://mobilecare-api.onrender.com)
@@ -21,7 +21,7 @@
 
 ---
 
-##  Key Engineering Highlights
+## Key Engineering Highlights
 
 * **Atomic Transactions & Concurrency Control**: Checkout logic utilizes database-level row locking (`select_for_update`) and `@transaction.atomic` to prevent race conditions and overselling during peak traffic.
 * **Service Layer Architecture**: Clean separation between presentation (`views.py`) and business logic (`services.py`), maintaining thin views and testable domain services.
@@ -58,7 +58,7 @@
 
 ---
 
-##  Repository Layout
+## Repository Layout
 
 ```text
 ├── .github/
@@ -89,7 +89,7 @@
 
 ---
 
-##  Quickstart Guide
+## Quickstart Guide
 
 ### 1. Prerequisites
 * **Python 3.11+**
@@ -125,7 +125,7 @@ python manage.py test
 python manage.py runserver
 ```
 The API server will run at: `http://127.0.0.1:8000/`  
-Interactive Swagger Docs: `http://127.0.0.1:8000/api/v1/schema/swagger/`
+Interactive Swagger Docs: `http://127.0.0.1:8000/api/docs/`
 
 ---
 
@@ -147,7 +147,7 @@ The application will be accessible at: `http://localhost:5173/`
 
 ---
 
-##  Demo Credentials
+## Demo Credentials
 
 After running `python manage.py seed_data`, the following pre-configured test accounts are available:
 
@@ -159,7 +159,7 @@ After running `python manage.py seed_data`, the following pre-configured test ac
 
 ---
 
-##  Testing & Code Quality
+## Testing & Code Quality
 
 The backend test suite verifies transaction atomicity, stock reservation bounds, authentication boundaries, and permission isolation:
 
@@ -188,5 +188,5 @@ npm run build
 
 ---
 
-##  License
+## License
 Distributed under the MIT License. See `LICENSE` for details.
