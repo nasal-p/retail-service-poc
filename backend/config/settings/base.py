@@ -52,6 +52,7 @@ LOCAL_APPS = [
     "apps.inventory",
     "apps.orders",
     "apps.services",
+    "apps.chatbot",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -205,6 +206,7 @@ SPECTACULAR_SETTINGS = {
         {"name": "Services", "description": "Repair/service catalogue"},
         {"name": "Service Requests", "description": "Customer service requests"},
         {"name": "Dashboard", "description": "Admin dashboard stats"},
+        {"name": "Chatbot", "description": "AI customer support chatbot"},
     ],
 }
 

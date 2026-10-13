@@ -2,6 +2,7 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/customer/Navbar";
 import Footer from "../components/customer/Footer";
+import ChatWidget from "../components/common/ChatWidget";
 
 const CustomerLayout = () => {
   return (
@@ -11,6 +12,8 @@ const CustomerLayout = () => {
         <Outlet />
       </main>
       <Footer />
+      {/* AI Customer Support — floats on every customer page */}
+      <ChatWidget />
     </div>
   );
 };
