@@ -7,9 +7,10 @@
 ![React](https://img.shields.io/badge/React-19-61DAFB?style=flat&logo=react&logoColor=black)
 ![Vite](https://img.shields.io/badge/Vite-8-646CFF?style=flat&logo=vite&logoColor=white)
 ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-v4-38B2AC?style=flat&logo=tailwind-css&logoColor=white)
+![Google Gemini](https://img.shields.io/badge/Google_Gemini-AI_Chatbot-4285F4?style=flat&logo=google&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg)
 
-> A full-stack retail and device repair management platform built with **Django REST Framework (DRF)** and **React 19**. Features concurrency-safe inventory checkouts, role-based access control (RBAC), end-to-end device service tracking, and automated CI pipelines.
+> A full-stack retail and device repair management platform built with **Django REST Framework (DRF)** and **React 19**. Features an **AI-powered customer support chatbot (Google Gemini)** with dynamic RAG context, concurrency-safe inventory checkouts, role-based access control (RBAC), end-to-end device service tracking, and automated CI pipelines.
 
 ---
 
@@ -23,6 +24,8 @@
 
 ## Key Engineering Highlights
 
+* **Context-Aware AI Support Chatbot**: Integrated Google Gemini LLM with dynamic data grounding. Directly injects live customer order history and active product catalogue into system prompts for real-time, hallucination-free support without external vector DB overhead.
+* **Multi-Model Failover Resilience**: Engineered an automated LLM fallback mechanism (`gemini-3.5-flash` → `gemini-flash-latest` → `gemini-3.5-flash-lite`, etc.) ensuring continuous availability even when encountering per-model rate limits (HTTP 429) or model deprecations.
 * **Atomic Transactions & Concurrency Control**: Checkout logic utilizes database-level row locking (`select_for_update`) and `@transaction.atomic` to prevent race conditions and overselling during peak traffic.
 * **Service Layer Architecture**: Clean separation between presentation (`views.py`) and business logic (`services.py`), maintaining thin views and testable domain services.
 * **Role-Based Access Control (RBAC)**: Custom JWT-authenticated user system supporting discrete permissions across `CUSTOMER`, `STAFF`, and `ADMIN` roles.
@@ -39,6 +42,7 @@
 ┌─────────────────────────────────────────────────────────┐
 │                    React 19 SPA                         │
 │   (Vite 8 • TailwindCSS v4 • Lucide Icons • Router v7)  │
+│             Includes: Floating AI ChatWidget            │
 └────────────────────────────┬────────────────────────────┘
                              │  HTTP / JSON (REST APIs)
                              │  JWT Bearer Auth
@@ -48,7 +52,8 @@
 │  ├── products  : Catalogue, Search & Filtering          │
 │  ├── inventory : Stock tracking & Transaction audit     │
 │  ├── orders    : Atomic Checkout, Cart & Invoicing      │
-│  └── services  : Repair booking & Lifecycle engine      │
+│  ├── services  : Repair booking & Lifecycle engine      │
+│  └── chatbot   : Google Gemini LLM & Dynamic Context    │
 └────────────────────────────┬────────────────────────────┘
                              │  ORM Transactions
 ┌────────────────────────────▼────────────────────────────┐
@@ -67,6 +72,7 @@
 ├── backend/
 │   ├── apps/
 │   │   ├── accounts/          # User auth, RBAC & profile management
+│   │   ├── chatbot/           # AI support service & Gemini failover
 │   │   ├── products/          # Products, categories, and filtering
 │   │   ├── inventory/         # Stock control & transaction logging
 │   │   ├── orders/            # Cart & atomic checkout services
@@ -77,10 +83,10 @@
 │   └── requirements.txt
 ├── frontend/
 │   ├── src/
-│   │   ├── components/        # Reusable UI components
+│   │   ├── components/        # UI components (Navbar, ChatWidget, etc.)
 │   │   ├── context/           # React context providers (Auth, Cart)
 │   │   ├── pages/             # Customer & Admin pages
-│   │   ├── services/          # Axios API clients
+│   │   ├── services/          # Axios API clients (auth, orders, chat)
 │   │   └── routes/            # Protected & public route definitions
 │   ├── package.json
 │   └── vite.config.js
@@ -95,6 +101,7 @@
 * **Python 3.11+**
 * **Node.js 20+** and **npm**
 * **Git**
+* **Google Gemini API Key** (Free tier available at [Google AI Studio](https://aistudio.google.com))
 
 ---
 
@@ -113,6 +120,10 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
+# Configure environment variables
+cp .env.example .env
+# (Add your GEMINI_API_KEY into .env)
 
 # Run migrations & seed sample data (includes 3 demo accounts)
 python manage.py migrate
